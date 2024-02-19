@@ -92,14 +92,10 @@ function Cart() {
       const orderRef = collection(fireDB, "order");
       addDoc(orderRef, orderInfo);
       toast.success("Order successs");
-      cartItems=null;
+      cartItems.clear();
     } catch (error) {
       console.log(error);
     }
-
-    // var pay = new window.Razorpay(options);
-    // pay.open();
-    // console.log(pay);
   };
   return (
     <Layout>
